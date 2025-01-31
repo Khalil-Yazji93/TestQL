@@ -96,7 +96,7 @@ jobs:
       run: g++ --version
 
     - name: Build the C++ file
-      run: g++ -o my_program.exe main.cpp
+      run: g++ -o my_program.exe HelloWorld.cpp
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
