@@ -86,10 +86,11 @@ jobs:
         #echo '  make release'
         #exit 1
     - name: Install MinGW (GCC for Windows)
+      shell: powershell  # ✅ Ensure the correct shell
       run: |
           choco install mingw -y
           echo "C:\ProgramData\chocolatey\lib\mingw\tools\install\mingw64\bin" | Out-File -Append -Encoding utf8 $env:GITHUB_PATH
-
+          
     - name: Verify GCC Installation
       run: g++ --version
 
